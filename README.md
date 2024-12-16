@@ -60,5 +60,5 @@ The **Ultimate Code Generator** is a simple and efficient HTML-based tool that e
 ---
 
 ### 🔗 Links  
-- Explore the NFT on OpenSea: [Ultimate Tools Collection](https://opensea.io/collection/ultimate-tools)  
+- Explore the NFT on OpenSea: [Ultimate Tools Collection](https://opensea.io/collection/ultimatetools)  
 - Access the code: [Ultimate Code Generator on GitHub](https://github.com/jadercarminatti/ultimate-code-generator)  
