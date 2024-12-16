@@ -6,7 +6,6 @@
 
 **Ultimate Code Generator** é um aplicativo HTML simples e eficiente que permite gerar arquivos de código em diversas linguagens de programação diretamente no navegador.
 
-
 ---
 
 ## 🚀 Como Usar
@@ -38,4 +37,28 @@ c93d376d4e156365111432aea132077e1ac04fb334f1f9e0bfeb985e8e79cfcf
 ## 📫 Contato
 - **Autor**: JCarmin  
 - **GitHub**: [jadercarminatti](https://github.com/jadercarminatti)  
-```
+
+---
+
+# 🌐 Ultimate Code Generator (ENGLISH)  
+The **Ultimate Code Generator** is a simple and efficient HTML-based tool that enables you to create code files across multiple programming languages directly in your browser.
+
+### How to Use  
+1. Open the `UCG-UltimateCodeGenerator.html` file in your browser.  
+2. Write or paste your code into the text area.  
+3. Choose the desired format from the menu (HTML, CSS, JS, Python, SQL, and more).  
+4. Click **"Generate File"**.  
+5. The file will be downloaded in the chosen format.
+
+---
+
+### 🌟 Features  
+- 🌟 Supports multiple code formats: **HTML, CSS, JS, Python, SQL, Markdown**, and more.  
+- 💻 Simple, modern, and intuitive interface.  
+- ⚡ Fast and lightweight: No backend or installation required.  
+
+---
+
+### 🔗 Links  
+- Explore the NFT on OpenSea: [Ultimate Tools Collection](https://opensea.io/collection/ultimate-tools)  
+- Access the code: [Ultimate Code Generator on GitHub](https://github.com/jadercarminatti/ultimate-code-generator)  
