@@ -1,0 +1,79 @@
+# Workflow para Geração Automática de Imagem de DNA
+
+name: CodeDNA Image Generator
+
+on: 
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  generate-dna-image:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install Pillow numpy
+
+    - name: Generate DNA Code Image
+      run: |
+        python - << EOF
+import numpy as np
+from PIL import Image, ImageDraw, ImageFont
+import random
+
+def generate_dna_code_image():
+    # Configurações da imagem
+    width, height = 800, 600
+    image = Image.new('RGB', (width, height), color='white')
+    draw = ImageDraw.Draw(image)
+    
+    # Cores do tema
+    colors = ['#1A237E', '#3F51B5', '#7986CB', '#C5CAE9']
+    
+    # Desenhar hélice de DNA
+    for i in range(20):
+        x1 = 200 + np.sin(i*0.3) * 100
+        y1 = i * 30
+        x2 = 600 - np.sin(i*0.3) * 100
+        y2 = y1
+        
+        # Linhas de código como "bases"
+        code_snippet = f"def dna_{i}_mutate():"
+        draw.line([(x1, y1), (x2, y2)], fill=random.choice(colors), width=3)
+        
+        font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuMono.ttf", 15)
+        draw.text((x1-150, y1), code_snippet, fill='black', font=font)
+    
+    # Adicionar título
+    title_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 40)
+    draw.text((250, 50), "CodeDNA", fill='#1A237E', font=title_font)
+    
+    # Salvar imagem
+    image.save('codedna_genetic_code.png')
+
+generate_dna_code_image()
+EOF
+
+    - name: Upload DNA Image
+      uses: actions/upload-artifact@v3
+      with:
+        name: codedna-image
+        path: codedna_genetic_code.png
+
+    - name: Commit and Push Image
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add codedna_genetic_code.png
+        git commit -m "Generate CodeDNA Genetic Image" || echo "No changes to commit"
+        git push
